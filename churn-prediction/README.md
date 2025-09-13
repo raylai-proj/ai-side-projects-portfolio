@@ -21,4 +21,25 @@
 - evaluate : Evaluate means after model trains with training dataset, we feed the model test dataset (dataset the model didn't see before) for prediction and measure how good the trained moded is. <br >
 - history : History is a log object contains training metric (loss, accuracy) for each epoch and validation metric. When I train a model with training dataset, it returns a history object which I can draw learning curve, e.g. loss vs. epochs, accuracy vs. epochs. <br >
 
+## Machine Learning Library:
+- `sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=True, shuffle=True, stratify=True)`<sub>[1]</sub>: `train_test_split()` is a common tools for spliting original dataset into train set and test set. The `*arrays` is not an argument. Instead, `*` means one or more, so `*arrays` means the function accepts one or more arrays to be split. <br >
+- `sklearn.preprocessing.StandardScaler()`<sub>[2]</sub>: The `StandardScaler()` creates scaler object to scale features. After creating scaler object, I can call `fit()` and `transform()`. <br >
+  - Why do I need `StandardScaler()`? I need to make features from X_train set into same scale because different features can have different scales, e.g. __Age__ = 1\~80, __Month\_Spend__ = 0\~5,000. If I don't scale features, the ML models will treat __Month\_Spend__ as more important feature because it has higher number than __Age__. <br >
+  - `StandardScaler.fit()`: It goes over features in X_train set and computes and stores mean (μ) and standard deviation (σ) for each features for standardization later. <br >
+  - `StandardScaler.transform()`: With mean (μ) and standard deviation (σ) for each features, it applies standaraization to the data:<sub>[3]</sub><br >
+  $`x_{scaled} =  \frac{x-μ}{σ}`$<br >
+  - `StandardScaler.fit_transform()`: The StandardScaler do `fit()` and `transform()` at once. <br >
+  - Common usage: <br >
+  ```Python
+  scaler = sklearn.preprocessing.StandardScaler()     #declare StandardScaler()
+  X_train_scaled = scaler.fit_transform(X_train)    #get mean and standard deviation from X_train set and apply standardization on X_train set
+  X_test_scaled = scaler.transform(X_test)          #apply standardization on X_test set (unseen feature/data remains unseen) with the same mean and standard deviation from X_train set
+  ```
+
+## Reference:
+[1] [train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)<br >
+[2] [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)<br >
+[3] [iTex2Img](https://www.sciweavers.org/free-online-latex-equation-editor)
+
+
 
