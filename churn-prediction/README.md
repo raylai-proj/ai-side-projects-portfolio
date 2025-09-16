@@ -35,11 +35,29 @@
   X_train_scaled = scaler.fit_transform(X_train)    #get mean and standard deviation from X_train set and apply standardization on X_train set
   X_test_scaled = scaler.transform(X_test)          #apply standardization on X_test set (unseen feature/data remains unseen) with the same mean and standard deviation from X_train set
   ```
+- `tensorflow.keras.Sequential()`<sub>[4]</sub>: The `Sequential()` initiates the model structure as a stack that has layers sequentially. <br >
+  - `Sequential.add()`<sub>[5]</sub>: With sequential model, I can apply `add()` to add layers into `Sequential()` constructor. <br >
+- `tensorflow.keras.layers.LSTM()`<sub>[6]</sub>: LSTM stands for Long Short-Term Memory which is a type of recurrent neural network that adds memory cells to keep long-term dependencies (long-term information).<br >
+- `tensorflow.keras.layers.Dropout()`<sub>[7]</sub>: `Dropout` will set certain percent neurons to inactive (0) at this layer. This will prevent the model rely on specific neurons and avoid overfitting.<br >
+- `tensorflow.keras.layers.Dense()`<sub>[8]</sub>: `Dense` creates a full-connected layer which every neuron in this layer is connected to all neurons in previous layer.<br >
+- `tensorflow.keras.model.compile()`<sub>[9]</sub>: After the model is constructed, I call `compile()` to config loss function, optimizer, and metrics before training.<br >
+  - Example: model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']) <br >
+  - loss means loss function which measure how wrong the model is during training. <br >
+  - binary_crossentropy is a loss function to make prediction for two classes. (0 or 1, True or False) <br >
+  - optimizer is used to decide how the model update weights during training. <br >
+  - metrics=['accuracy] tell the model to evaluate accuracy metric during training. The accuracy metric shows how great the model prediction during training. <br >
 
 ## Reference:
 [1] [train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)<br >
 [2] [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)<br >
-[3] [iTex2Img](https://www.sciweavers.org/free-online-latex-equation-editor)
+[3] [iTex2Img](https://www.sciweavers.org/free-online-latex-equation-editor)<br >
+[4] [tf.keras.Sequential](https://www.tensorflow.org/api_docs/python/tf/keras/Sequential)<br >
+[5] [The Sequential model](https://www.tensorflow.org/guide/keras/sequential_model)<br >
+[6] [Long short-term memory](https://en.wikipedia.org/wiki/Long_short-term_memory)<br >
+[7] [tf.keras.layers.Dropout in TensorFlow](https://www.geeksforgeeks.org/deep-learning/tf-keras-layers-dropout-in-tensorflow/)<br >
+[8] [Dense Layer (tf.keras.layers.Dense) in TensorFlow](https://www.geeksforgeeks.org/deep-learning/dense-layer-tf-keras-layers-dense-in-tensorflow/)
+[9] [tf.keras.Model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#example_2)
+
 
 
 
