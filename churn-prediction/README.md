@@ -42,10 +42,12 @@
 - `tensorflow.keras.layers.Dense()`<sub>[8]</sub>: `Dense` creates a full-connected layer which every neuron in this layer is connected to all neurons in previous layer.<br >
 - `tensorflow.keras.model.compile()`<sub>[9]</sub>: After the model is constructed, I call `compile()` to config loss function, optimizer, and metrics before training.<br >
   - Example: model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']) <br >
-  - loss means loss function which measure how wrong the model is during training. <br >
-  - binary_crossentropy is a loss function to make prediction for two classes. (0 or 1, True or False) <br >
-  - optimizer is used to decide how the model update weights during training. <br >
-  - metrics=['accuracy] tell the model to evaluate accuracy metric during training. The accuracy metric shows how great the model prediction during training. <br >
+  - __loss__ means __loss function__ which measure how wrong the model is during training. <br >
+  - __binary\_crossentropy__ is a loss function to make prediction for two classes. (0 or 1, True or False) <br >
+  - __optimizer__ is used to decide how the model update weights during training. <br >
+  - __metrics=['accuracy]__ tell the model to evaluate accuracy metric during training. The accuracy metric shows how great the model prediction during training. <br >
+- `pandas.DataFrame.shape(DataFrame)`<sub>[10]</sub>: `shape` return tuple of (row\#, column\#), and in machine learning, the row is number of samples and column is number of features, so the return tuple would be (sample\#, feature\#). <br >
+- `numpy.reshape(array, newshape=tuple of ints)`<sub>[11]</sub>: `reshape` return new ndarray with new shape. <br >
 
 ## Reference:
 [1] [train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)<br >
@@ -55,8 +57,11 @@
 [5] [The Sequential model](https://www.tensorflow.org/guide/keras/sequential_model)<br >
 [6] [Long short-term memory](https://en.wikipedia.org/wiki/Long_short-term_memory)<br >
 [7] [tf.keras.layers.Dropout in TensorFlow](https://www.geeksforgeeks.org/deep-learning/tf-keras-layers-dropout-in-tensorflow/)<br >
-[8] [Dense Layer (tf.keras.layers.Dense) in TensorFlow](https://www.geeksforgeeks.org/deep-learning/dense-layer-tf-keras-layers-dense-in-tensorflow/)
-[9] [tf.keras.Model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#example_2)
+[8] [Dense Layer (tf.keras.layers.Dense) in TensorFlow](https://www.geeksforgeeks.org/deep-learning/dense-layer-tf-keras-layers-dense-in-tensorflow/)<br >
+[9] [tf.keras.Model](https://www.tensorflow.org/api_docs/python/tf/keras/Model#example_2)<br >
+[10] [pandas.DataFrame.shape](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html)<br >
+[11] [numpy.reshape](https://numpy.org/doc/2.0/reference/generated/numpy.reshape.html)<br >
+
 
 
 
